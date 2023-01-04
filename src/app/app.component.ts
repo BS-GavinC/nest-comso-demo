@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WikiService } from './wiki.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'nest-comso-demo';
+
+  get datas(){
+    return this._wikiService.monthly
+  }
+
+  title : string = ''
+
+  constructor(private readonly _wikiService : WikiService){}
+
+
 }
