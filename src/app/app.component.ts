@@ -12,16 +12,21 @@ export class AppComponent {
 
   monthly : MonthlyData[] = []
 
+  searchedValue : string = ''
 
+  hasData : boolean = false;
 
   title : string = ''
 
   constructor(private readonly _wikiService : WikiService){}
 
   Search(){
+    this.hasData = false;
+    this.searchedValue = this.research
     this._wikiService.Search(this.research).subscribe({
       next : (data ) => {
         this.monthly = data
+        this.hasData = true;
       }
     })
   }
