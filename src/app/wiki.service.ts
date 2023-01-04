@@ -6,15 +6,16 @@ import {HttpClient} from '@angular/common/http'
 })
 export class WikiService {
 
-  monthly : MonthlyData[] = []
+
 
   constructor(private readonly _http : HttpClient) {
-    this._http.get<MonthlyData[]>('http://localhost:3000/wiki/2015/Donald_Trump').subscribe({
-      next : (data) => {
-        this.monthly = data
-      }
-    })
+
    }
+
+   Search(value : string){
+    return this._http.get<MonthlyData[]>('http://localhost:3000/wiki/2020/' + value)
+   }
+
 }
 
 export interface MonthlyData{

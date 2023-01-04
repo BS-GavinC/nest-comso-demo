@@ -1,7 +1,11 @@
-<h1>Motorola</h1>
+<h1>{{research}}</h1>
 
-<ngx-charts-bar-vertical *ngIf="datas != []"
-  [results]="datas"
+<input type="text" [(ngModel)]="research">
+
+<button (click)="Search()" [disabled]="research == ''">SEARCH</button>
+
+<ngx-charts-bar-vertical *ngIf="monthly != []"
+  [results]="monthly"
   [scheme]="'vivid'"
   [showXAxisLabel]="true"
   [showYAxisLabel]="true"

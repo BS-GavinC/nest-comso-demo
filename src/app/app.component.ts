@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WikiService } from './wiki.service';
+import { MonthlyData, WikiService } from './wiki.service';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +8,22 @@ import { WikiService } from './wiki.service';
 })
 export class AppComponent {
 
-  get datas(){
-    return this._wikiService.monthly
-  }
+  research : string = ''
+
+  monthly : MonthlyData[] = []
+
+
 
   title : string = ''
 
   constructor(private readonly _wikiService : WikiService){}
 
+  Search(){
+    this._wikiService.Search(this.research).subscribe({
+      next : (data ) => {
+        this.monthly = data
+      }
+    })
+  }
 
 }
