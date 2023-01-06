@@ -1,0 +1,27 @@
+<input type="text" [(ngModel)]="selectedValue[0]">
+<input type="text" [(ngModel)]="selectedValue[1]">
+
+
+<select [(ngModel)]="selectedYear">
+  <option *ngFor="let year of DisponibleYears" [value]="year">{{year}}</option>
+</select>
+
+<button (click)="Search()">SEARCH</button>
+
+<div style="height: 500px;">
+<ngx-charts-line-chart *ngIf="datas.length == 2"
+[results]="datas"
+style="width: 700px; height: 300px;"
+[xAxis]="true"
+[xAxisLabel]="'Mois'"
+[showXAxisLabel]="true"
+[yAxis]="true"
+[yAxisLabel]="'Vues'"
+[showYAxisLabel]="true"
+[legend]="true"
+>
+
+</ngx-charts-line-chart>
+</div>
+
+

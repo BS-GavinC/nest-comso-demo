@@ -25,3 +25,8 @@ export interface MonthlyData{
   value : number
 }
 
+export interface YearData{
+  name : string
+  series : MonthlyData[]
+}
+
