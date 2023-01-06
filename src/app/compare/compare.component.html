@@ -8,6 +8,8 @@
 
 <button (click)="Search()">SEARCH</button>
 
+<p *ngIf="ErrorMessage != ''">{{ErrorMessage}}</p>
+
 <div style="height: 500px;">
 <ngx-charts-line-chart *ngIf="datas.length == 2"
 [results]="datas"
