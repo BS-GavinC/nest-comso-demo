@@ -1,18 +1,2 @@
 
-<input type="text" [(ngModel)]="research">
-
-<button (click)="Search()" [disabled]="research == ''">SEARCH</button>
-
-<br>
-<h1 *ngIf="hasData">Nombre de recherche mensuelles sur Wikipedia : {{searchedValue}}</h1>
-<ngx-charts-bar-vertical *ngIf="hasData"
-  [results]="monthly"
-  [scheme]="'vivid'"
-  [showXAxisLabel]="true"
-  [showYAxisLabel]="true"
-  [showGridLines]="true"
-  [xAxis]="true"
-  [yAxis]="true"
-  [xAxisLabel]="'Month'"
-  [yAxisLabel]="'Views'"
-></ngx-charts-bar-vertical>
+<app-search></app-search>

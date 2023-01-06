@@ -13,8 +13,8 @@ export class WikiService {
 
    }
 
-   Search(value : string) : Observable<MonthlyData[]>{
-    return this._http.get<MonthlyData[]>('http://localhost:3000/wiki/2020/' + value)
+   Search(value : string, year : string) : Observable<MonthlyData[]>{
+    return this._http.get<MonthlyData[]>('http://localhost:3000/wiki/' + year +'/' + value)
    }
 
 
